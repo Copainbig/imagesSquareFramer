@@ -55,9 +55,9 @@ public class Main {
         int total_length = 100;
         int donePercentage = (total_length / totalCount) * doneCount;
         StringBuilder str = new StringBuilder();
-        while(str.length() < donePercentage) str.append('█');
+        while(str.length() <= donePercentage) str.append('█');
         while(str.length() < 100) str.append('▁');
-        String output = "\r Progress : " + str.toString() + " | (" + doneCount + "/" + totalCount + ")";
+        String output = "\r Progress : " + str + " | (" + doneCount + "/" + totalCount + ")";
         try {
             System.out.write(output.getBytes());
         } catch (IOException exception) {
@@ -102,7 +102,7 @@ public class Main {
         int height = img.getHeight();
         int width = img.getWidth();
 
-        int frameSquareSide = Math.round(Math.max(height, width)*1.05f);
+        int frameSquareSide = Math.round(Math.max(height, width)*1.04f);
 
         BufferedImage outputImage = new BufferedImage(frameSquareSide, frameSquareSide, BufferedImage.TYPE_INT_RGB);
 
